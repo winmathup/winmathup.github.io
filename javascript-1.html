@@ -44,17 +44,17 @@
     <meta property="og:site_name" content="WINNERS" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="javascript Study" />
-    <meta property="og:description" content="Chapter 27.배열 const Queue=(function(){ function Queue(array=[]){ if(!Array.isArray(array)){ throw new TypeError(`${array} is not an array`); } this.array=array; } Queue.prototype={ constructor:Queue, enqueue(value){ return this.array.push(value); }, dequeue(){ return this.array.shift(); }, entries(){ return [...this.array]; }}; return Queue; }()); const queue = new Queue([1,2,3]); console.log(queue.entries()); queue.enqueue(3); console.log(queue.entries()); queue.dequeue(); console.log(queue.entries()); Ex-1] Slice 메서드 const arr =" />
+    <meta property="og:description" content="Chapter 27.배열 (Part1) const Queue=(function(){ function Queue(array=[]){ if(!Array.isArray(array)){ throw new TypeError(`${array} is not an array`); } this.array=array; } Queue.prototype={ constructor:Queue, enqueue(value){ return this.array.push(value); }, dequeue(){ return this.array.shift(); }, entries(){ return [...this.array]; }}; return Queue; }()); const queue = new Queue([1,2,3]); console.log(queue.entries()); queue.enqueue(3); console.log(queue.entries()); queue.dequeue(); console.log(queue.entries()); Ex-1] Slice 메서드 const arr" />
     <meta property="og:url" content="https://winmathup.github.io/javascript-1" />
     <meta property="og:image" content="https://winmathup.github.io/assets/built/images/javascript.png" />
     <meta property="article:publisher" content="https://www.facebook.com/ghost" />
     <meta property="article:author" content="https://www.facebook.com/ghost" />
-    <meta property="article:published_time" content="2022-10-29T20:00:00+09:00" />
-    <meta property="article:modified_time" content="2022-10-29T20:00:00+09:00" />
+    <meta property="article:published_time" content="2022-10-30T10:00:00+09:00" />
+    <meta property="article:modified_time" content="2022-10-30T10:00:00+09:00" />
     <meta property="article:tag" content="Javascript" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="javascript Study" />
-    <meta name="twitter:description" content="Chapter 27.배열 const Queue=(function(){ function Queue(array=[]){ if(!Array.isArray(array)){ throw new TypeError(`${array} is not an array`); } this.array=array; } Queue.prototype={ constructor:Queue, enqueue(value){ return this.array.push(value); }, dequeue(){ return this.array.shift(); }, entries(){ return [...this.array]; }}; return Queue; }()); const queue = new Queue([1,2,3]); console.log(queue.entries()); queue.enqueue(3); console.log(queue.entries()); queue.dequeue(); console.log(queue.entries()); Ex-1] Slice 메서드 const arr =" />
+    <meta name="twitter:description" content="Chapter 27.배열 (Part1) const Queue=(function(){ function Queue(array=[]){ if(!Array.isArray(array)){ throw new TypeError(`${array} is not an array`); } this.array=array; } Queue.prototype={ constructor:Queue, enqueue(value){ return this.array.push(value); }, dequeue(){ return this.array.shift(); }, entries(){ return [...this.array]; }}; return Queue; }()); const queue = new Queue([1,2,3]); console.log(queue.entries()); queue.enqueue(3); console.log(queue.entries()); queue.dequeue(); console.log(queue.entries()); Ex-1] Slice 메서드 const arr" />
     <meta name="twitter:url" content="https://winmathup.github.io/" />
     <meta name="twitter:image" content="https://winmathup.github.io/assets/built/images/javascript.png" />
     <meta name="twitter:label1" content="Written by" />
@@ -86,7 +86,7 @@
         "@type": "WebPage",
         "@id": "https://winmathup.github.io/javascript-1"
     },
-    "description": "Chapter 27.배열 const Queue=(function(){ function Queue(array=[]){ if(!Array.isArray(array)){ throw new TypeError(`${array} is not an array`); } this.array=array; } Queue.prototype={ constructor:Queue, enqueue(value){ return this.array.push(value); }, dequeue(){ return this.array.shift(); }, entries(){ return [...this.array]; }}; return Queue; }()); const queue = new Queue([1,2,3]); console.log(queue.entries()); queue.enqueue(3); console.log(queue.entries()); queue.dequeue(); console.log(queue.entries()); Ex-1] Slice 메서드 const arr ="
+    "description": "Chapter 27.배열 (Part1) const Queue=(function(){ function Queue(array=[]){ if(!Array.isArray(array)){ throw new TypeError(`${array} is not an array`); } this.array=array; } Queue.prototype={ constructor:Queue, enqueue(value){ return this.array.push(value); }, dequeue(){ return this.array.shift(); }, entries(){ return [...this.array]; }}; return Queue; }()); const queue = new Queue([1,2,3]); console.log(queue.entries()); queue.enqueue(3); console.log(queue.entries()); queue.dequeue(); console.log(queue.entries()); Ex-1] Slice 메서드 const arr"
 }
     </script>
 
@@ -166,7 +166,7 @@ into the {body} of the default.hbs template -->
 
             <header class="post-full-header">
                 <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime="29 October 2022">29 October 2022</time>
+                    <time class="post-full-meta-date" datetime="30 October 2022">30 October 2022</time>
                     
                         <span class="date-divider">/</span>
                         
@@ -186,7 +186,7 @@ into the {body} of the default.hbs template -->
 -->
             <section class="post-full-content">
                 <div class="kg-card-markdown">
-                    <p>Chapter 27.배열</p>
+                    <p>Chapter 27.배열 (Part1)</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">const</span> <span class="n">Queue</span><span class="o">=</span><span class="p">(</span><span class="n">function</span><span class="p">(){</span>
 <span class="n">function</span> <span class="n">Queue</span><span class="p">(</span><span class="n">array</span><span class="o">=</span><span class="p">[]){</span>
@@ -341,7 +341,7 @@ fill메서드는 인수로 전달받은 값을 배열의 처음부터 끝까지 
 <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">todos</span><span class="p">);</span>
 <span class="n">todos</span><span class="p">.</span><span class="n">sort</span><span class="p">(</span><span class="n">compare</span><span class="p">(</span><span class="s">'content'</span><span class="p">));</span>
 <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">todos</span><span class="p">);</span>
-    
+
 <span class="n">VM728</span><span class="p">:</span><span class="mi">11</span> <span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="err"> </span><span class="p">[{</span><span class="err">…</span><span class="p">},</span> <span class="p">{</span><span class="err">…</span><span class="p">},</span> <span class="p">{</span><span class="err">…</span><span class="p">}]</span><span class="mi">0</span><span class="p">:</span> <span class="p">{</span><span class="nb">id</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="n">content</span><span class="p">:</span> <span class="s">'CSS'</span><span class="p">}</span><span class="mi">1</span><span class="p">:</span> <span class="p">{</span><span class="nb">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">content</span><span class="p">:</span> <span class="s">'HTML'</span><span class="p">}</span><span class="mi">2</span><span class="p">:</span> <span class="p">{</span><span class="nb">id</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="n">content</span><span class="p">:</span> <span class="s">'Javascript'</span><span class="p">}</span><span class="n">length</span><span class="p">:</span> <span class="mi">3</span><span class="p">[[</span><span class="n">Prototype</span><span class="p">]]:</span> <span class="n">Array</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">VM728</span><span class="p">:</span><span class="mi">13</span> 
 </code></pre></div></div>
@@ -474,9 +474,109 @@ forEach메서드는 원본 배열을 변경하지 않는다.(forEach의 반환�
                 
                 
                 
+                    <article class="read-next-card"
+                        
+                            
+                                style="background-image: url(url(/assets/built/images/javascript.png)"
+                        
+                    >
+                        <header class="read-next-card-header">
+                            <small class="read-next-card-header-sitetitle">&mdash; WINNERS &mdash;</small>
+                            
+                                <h3 class="read-next-card-header-title"><a href="/tag/javascript/">Javascript</a></h3>
+                            
+                        </header>
+                        <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+</div>
+                        <div class="read-next-card-content">
+                            <ul>
+                                
+                                
+                                  
+                                    
+                                  
+                                
+                                  
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                            </ul>
+                        </div>
+                        <footer class="read-next-card-footer">
+                            <a href="/tag/javascript/">
+                                
+                                    See all 1 posts  →
+                                
+                            </a>
+                        </footer>
+                    </article>
+                
             
 
             <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/javascript-2">
+                <div class="post-card-image" style="background-image: url(/assets/built/images/javascript.png)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/javascript-2">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Javascript</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">javascript Study</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p>Chapter 27.배열 (Part2)
+
+</p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/built/images/winlogo.png" alt="winmathup" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/winmathup/">winmathup</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      1 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
             
 
             <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
