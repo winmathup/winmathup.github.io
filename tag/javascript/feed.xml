@@ -1,4 +1,43 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://winmathup.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://winmathup.github.io/" rel="alternate" type="text/html" /><updated>2022-10-30T20:41:06+09:00</updated><id>https://winmathup.github.io/feed.xml</id><title type="html">WINNERS</title><subtitle>WINNERS MATHEMATICS</subtitle><entry><title type="html">javascript Study</title><link href="https://winmathup.github.io/javascript-1" rel="alternate" type="text/html" title="javascript Study" /><published>2022-10-29T20:00:00+09:00</published><updated>2022-10-29T20:00:00+09:00</updated><id>https://winmathup.github.io/javascript-1</id><content type="html" xml:base="https://winmathup.github.io/javascript-1">&lt;p&gt;Chapter 27.배열&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom" >
+  <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
+  <link href="https://winmathup.github.io/tag/javascript/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://winmathup.github.io/" rel="alternate" type="text/html" />
+  <updated>2022-10-30T20:41:06+09:00</updated>
+  <id>https://winmathup.github.io/tag/javascript/feed.xml</id>
+
+  
+  
+  
+
+  
+    <title type="html">WINNERS | </title>
+  
+
+  
+    <subtitle>WINNERS MATHEMATICS</subtitle>
+  
+
+  
+
+  
+    
+      
+    
+  
+
+  
+  
+
+  
+    <entry>
+      <title type="html">javascript Study</title>
+      <link href="https://winmathup.github.io/javascript-1" rel="alternate" type="text/html" title="javascript Study" />
+      <published>2022-10-29T20:00:00+09:00</published>
+      <updated>2022-10-29T20:00:00+09:00</updated>
+      <id>https://winmathup.github.io/javascript-1</id>
+      <content type="html" xml:base="https://winmathup.github.io/javascript-1">&lt;p&gt;Chapter 27.배열&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Queue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]){&lt;/span&gt;
@@ -220,46 +259,32 @@ forEach메서드는 원본 배열을 변경하지 않는다.(forEach의 반환�
 &lt;span class=&quot;n&quot;&gt;VM3074&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;VM3074&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;VM3074&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>winmathup</name></author><category term="javascript" /><summary type="html">Chapter 27.배열</summary></entry><entry><title type="html">React Study</title><link href="https://winmathup.github.io/react-1" rel="alternate" type="text/html" title="React Study" /><published>2022-10-23T20:00:00+09:00</published><updated>2022-10-23T20:00:00+09:00</updated><id>https://winmathup.github.io/react-1</id><content type="html" xml:base="https://winmathup.github.io/react-1">&lt;p&gt;vertgwrtgrt&lt;/p&gt;</content><author><name>winmathup</name></author><category term="react" /><summary type="html">vertgwrtgrt</summary></entry><entry><title type="html">중등수학</title><link href="https://winmathup.github.io/middle" rel="alternate" type="text/html" title="중등수학" /><published>2022-10-23T20:00:00+09:00</published><updated>2022-10-23T20:00:00+09:00</updated><id>https://winmathup.github.io/middle</id><content type="html" xml:base="https://winmathup.github.io/middle">&lt;p&gt;vertgwrtgrt&lt;/p&gt;</content><author><name>winmathup</name></author><category term="middle" /><summary type="html">vertgwrtgrt</summary></entry><entry><title type="html">초등수학</title><link href="https://winmathup.github.io/basic" rel="alternate" type="text/html" title="초등수학" /><published>2022-10-23T20:00:00+09:00</published><updated>2022-10-23T20:00:00+09:00</updated><id>https://winmathup.github.io/basic</id><content type="html" xml:base="https://winmathup.github.io/basic">&lt;p&gt;vertgwrtgrt&lt;/p&gt;</content><author><name>winmathup</name></author><category term="basic" /><summary type="html">vertgwrtgrt</summary></entry><entry><title type="html">고등수학</title><link href="https://winmathup.github.io/high" rel="alternate" type="text/html" title="고등수학" /><published>2022-10-23T20:00:00+09:00</published><updated>2022-10-23T20:00:00+09:00</updated><id>https://winmathup.github.io/high</id><content type="html" xml:base="https://winmathup.github.io/high">&lt;p&gt;vertgwrtgrt&lt;/p&gt;</content><author><name>winmathup</name></author><category term="high" /><summary type="html">vertgwrtgrt</summary></entry><entry><title type="html">mathematics Study</title><link href="https://winmathup.github.io/mathematics-1" rel="alternate" type="text/html" title="mathematics Study" /><published>2022-10-22T00:00:00+09:00</published><updated>2022-10-22T00:00:00+09:00</updated><id>https://winmathup.github.io/mathematics-1</id><content type="html" xml:base="https://winmathup.github.io/mathematics-1">&lt;p&gt;[abc] / [a-c] : 대괄호 안의 범위만큼의 문자만&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
 
-&lt;p&gt;[^abc] / [^a-c] : 대괄호 안의 범위만큼의 문자를 제외&lt;/p&gt;
+      
+      
+      
+      
+      
 
-&lt;p&gt;\d / \D : 0~9의 모든 숫자. 대문자로 쓸 경우 숫자를 제외한 모든 문자&lt;/p&gt;
+      <author>
+          <name>winmathup</name>
+        
+        
+      </author>
 
-&lt;p&gt;\w / \W : 모든 숫자와 알파벳 대소문자. 대문자로 쓸 경우 이를 제외한 문자&lt;/p&gt;
+      
 
-&lt;p&gt;\s / \S : 모든 종류의 공백. space, tab, form feed, line feed, etc.&lt;/p&gt;
+      
+        <category term="javascript" />
+      
 
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;a&lt;/td&gt;
-      &lt;td&gt;b : a 혹은 b&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+      
+        <summary type="html">Chapter 27.배열</summary>
+      
 
-&lt;ul&gt;
-  &lt;li&gt;나머지는 Character classes 참고&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>winmathup</name></author><category term="mathematics" /><summary type="html">[abc] / [a-c] : 대괄호 안의 범위만큼의 문자만</summary></entry><entry><title type="html">winners Study</title><link href="https://winmathup.github.io/winners" rel="alternate" type="text/html" title="winners Study" /><published>2022-10-21T10:00:00+09:00</published><updated>2022-10-21T10:00:00+09:00</updated><id>https://winmathup.github.io/winners</id><content type="html" xml:base="https://winmathup.github.io/winners">&lt;p&gt;[abc] / [a-c] : 대괄호 안의 범위만큼의 문자만&lt;/p&gt;
-
-&lt;p&gt;[^abc] / [^a-c] : 대괄호 안의 범위만큼의 문자를 제외&lt;/p&gt;
-
-&lt;p&gt;\d / \D : 0~9의 모든 숫자. 대문자로 쓸 경우 숫자를 제외한 모든 문자&lt;/p&gt;
-
-&lt;p&gt;\w / \W : 모든 숫자와 알파벳 대소문자. 대문자로 쓸 경우 이를 제외한 문자&lt;/p&gt;
-
-&lt;p&gt;\s / \S : 모든 종류의 공백. space, tab, form feed, line feed, etc.&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;a&lt;/td&gt;
-      &lt;td&gt;b : a 혹은 b&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;나머지는 Character classes 참고&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>winmathup</name></author><category term="winners" /><summary type="html">[abc] / [a-c] : 대괄호 안의 범위만큼의 문자만</summary></entry></feed>
+      
+      
+    </entry>
+  
+</feed>
