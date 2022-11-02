@@ -208,6 +208,24 @@ into the {body} of the default.hbs template -->
 <p>forEach 메서드와 map 메서드의 공통점은 자신을 호출한 배열의 모든 요소를 순회하면서 인수로 전달받은 콜백함수를 반복 호출한다는 것이다.
 하지만 forEach 메서드는 언제나 undefined를 반환하고, map 메서드는 콜백함수의 반환값들로 구성된 새로운 배열을 반환하는 차이가 있다. 즉, forEach 메서드는 단순히 반복문을 대체하기 위한 고차 함수이고, map 메서드는 요소값을 다른 값으로 매핑한 새로운 배열을 생성하기 위한 고차함수이다.</p>
 
+<p>map 메서드가 생성하여 반환하는 새로운 배열의 length 프로퍼티 값은 map 메서드를 호출한 배열의 length 프로퍼티 값과 반드시 일치한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Prefixer</span><span class="p">{</span>
+    <span class="n">constructor</span><span class="p">(</span><span class="n">prefix</span><span class="p">){</span>
+        <span class="n">this</span><span class="p">.</span><span class="n">prefix</span><span class="o">=</span><span class="n">prefix</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">add</span><span class="p">(</span><span class="n">arr</span><span class="p">){</span>
+        <span class="k">return</span> <span class="n">arr</span><span class="p">.</span><span class="nb">map</span><span class="p">(</span><span class="n">function</span> <span class="p">(</span><span class="n">item</span><span class="p">){</span>
+            <span class="k">return</span> <span class="n">this</span><span class="p">.</span><span class="n">prefix</span><span class="o">+</span><span class="n">item</span><span class="p">;</span>
+        <span class="p">},</span> <span class="n">this</span><span class="p">);</span>
+    <span class="p">}}</span>
+<span class="n">const</span> <span class="n">prefixer</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Prefixer</span><span class="p">(</span><span class="s">'-webkit-'</span><span class="p">);</span>
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">prefixer</span><span class="p">.</span><span class="n">add</span><span class="p">([</span><span class="s">'transition'</span><span class="p">,</span> <span class="s">'user-select'</span><span class="p">]));</span>
+
+
+<span class="n">VM267</span><span class="p">:</span><span class="mi">11</span> <span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="err"> </span><span class="p">[</span><span class="s">'-webkit-transition'</span><span class="p">,</span> <span class="s">'-webkit-user-select'</span><span class="p">]</span>
+</code></pre></div></div>
+
                 </div>
             </section>
 
