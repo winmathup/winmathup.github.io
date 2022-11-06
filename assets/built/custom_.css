@@ -1,0 +1,333 @@
+/* 1. Global - Set up the things
+/* ---------------------------------------------------------- */
+
+body {
+    background: #f4f8fb;
+
+}
+
+.img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 100%;
+}
+
+.hidden {
+    visibility: hidden;
+    position: absolute;
+    text-indent: -9999px;
+}
+
+
+
+
+
+/* 3. Special Template Styles
+/* ---------------------------------------------------------- */
+
+@media (min-width: 900px) {
+
+    .home-template .post-feed,
+    .tag-template .post-feed,
+    .author-template .post-feed {
+        margin-top: -70px;
+        padding-top: 0;
+    }
+
+    .home-template .site-nav {
+        position: relative;
+        top: -70px;
+    }
+}
+
+
+
+
+
+
+/* 4. Site Header
+/* ---------------------------------------------------------- */
+
+.site-header {
+    position: relative;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    color: rgb(255, 255, 255);
+    background-size: cover;
+}
+
+.site-header:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    display: block;
+    background: rgba(0, 0, 0, 0.18);
+}
+
+
+.site-header:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    z-index: 10;
+    display: block;
+    height: 80px;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+}
+
+.site-header.no-cover:before,
+.site-header.no-cover:after {
+    display: none;
+}
+
+.site-header-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10vw 4vw;
+    min-height: 200px;
+    max-height: 450px;
+    text-align: center;
+}
+
+.site-title {
+    z-index: 10;
+    margin: 0;
+    padding: 0;
+    font-size: 3.8rem;
+    font-weight: 700;
+}
+
+.site-logo {
+    max-height: 45px;
+}
+
+.site-description {
+    z-index: 10;
+    margin: 0;
+    padding: 5px 0;
+    font-size: 2.2rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    opacity: 0.8;
+}
+
+
+
+
+
+/* Special Styling for home page grid (below):
+
+The first (most recent) post in the list is styled to be bigger than the others and take over the full width of the grid to give it more emphasis. Wrapped in a media query to make sure this only happens on large viewports / desktop-ish devices.
+
+ */
+
+@media (min-width: 795px) {
+    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) {
+        flex: 1 1 100%;
+        flex-direction: row;
+    }
+
+    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) .post-card-image-link {
+        position: relative;
+        flex: 1 1 auto;
+        border-radius: 5px 0 0 5px;
+    }
+
+    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) .post-card-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) .post-card-content {
+        flex: 0 1 357px;
+    }
+
+    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) h2 {
+        font-size: 2.6rem;
+    }
+
+    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) p {
+        font-size: 1.8rem;
+        line-height: 1.55em;
+    }
+
+    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) .post-card-content-link {
+        padding: 30px 40px 0;
+    }
+
+    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) .post-card-meta {
+        padding: 0 40px 30px;
+    }
+}
+
+.home-template .site-header:after {
+    display: none;
+}
+
+
+/* Adjust some margins for smaller screens */
+@media (max-width: 650px) {
+    .post-feed {
+        padding-top: 5vw;
+    }
+
+    .post-card {
+        margin: 0 20px 5vw;
+    }
+}
+
+
+/* 7. Single Post
+/* ---------------------------------------------------------- */
+
+.post-template .site-main,
+.page-template .site-main {
+    padding-bottom: 4vw;
+    background: rgb(248, 248, 248);
+}
+
+.post-full {
+    position: relative;
+    z-index: 50;
+}
+
+/* ^ Required to make .post-full-content:before/after z-index stacking work */
+
+.post-full-header {
+    margin: 0 auto;
+    padding: 6vw 3vw 3vw;
+    max-width: 1040px;
+    text-align: center;
+}
+
+@media (max-width: 500px) {
+    .post-full-header {
+        padding: 14vw 3vw 10vw;
+    }
+}
+
+.post-full-meta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--midgrey);
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.post-full-meta-date {
+    color: var(--blue);
+}
+
+.post-full-title {
+    margin: 0;
+    color: color(var(--darkgrey) l(-5%));
+}
+
+.date-divider {
+    display: inline-block;
+    margin: 0 6px 1px;
+}
+
+.post-full-image {
+    margin: 0 -10vw -165px;
+    height: 800px;
+    background: var(--lightgrey) center center;
+    background-size: cover;
+    border-radius: 5px;
+}
+
+@media (max-width: 1170px) {
+    .post-full-image {
+        margin: 0 -4vw -100px;
+        height: 600px;
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 800px) {
+    .post-full-image {
+        height: 400px;
+    }
+}
+
+.post-full-content {
+    position: relative;
+    margin: 0 auto;
+    padding: 70px 100px 0;
+    min-height: 230px;
+    font-family: Georgia, 'Nanum Gothic', serif;
+    font-size: 2.2rem;
+    line-height: 1.6em;
+    background: #fff;
+}
+
+@media (max-width: 1170px) {
+    .post-full-content {
+        padding: 5vw 7vw 0;
+    }
+}
+
+@media (max-width: 800px) {
+    .post-full-content {
+        font-size: 1.9rem;
+    }
+}
+
+.post-full-content:before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: -5px;
+    z-index: -1;
+    display: block;
+    width: 20px;
+    height: 200px;
+    background: rgba(39, 44, 49, 0.15);
+    filter: blur(5px);
+    transform: rotate(-5deg);
+}
+
+.post-full-content:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: -5px;
+    z-index: -1;
+    display: block;
+    width: 20px;
+    height: 200px;
+    background: rgba(39, 44, 49, 0.15);
+    filter: blur(5px);
+    transform: rotate(5deg);
+}
+
+.no-image .post-full-content {
+    padding-top: 0;
+}
+
+.no-image .post-full-content:before,
+.no-image .post-full-content:after {
+    display: none;
+}
+
+.kg-card-markdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 920px;
+}

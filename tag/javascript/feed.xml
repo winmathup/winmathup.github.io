@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://winmathup.github.io/tag/javascript/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://winmathup.github.io/" rel="alternate" type="text/html" />
-  <updated>2022-11-06T14:02:26+09:00</updated>
+  <updated>2022-11-06T16:59:01+09:00</updated>
   <id>https://winmathup.github.io/tag/javascript/feed.xml</id>
 
   
@@ -69,11 +69,9 @@
   &lt;li&gt;&lt;strong&gt;&lt;u&gt;style.cssText&lt;/u&gt;&lt;/strong&gt; - 기존에 정의된 style을 지우고, cssText로 덮어 씁니다.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;style.fontWeight=’bold’를 지정하였지만&lt;/p&gt;
-
-&lt;p&gt;element.style.cssText 구문이&lt;/p&gt;
-
-&lt;p&gt;앞에서 지정한 ‘fontWeight’ 속성을 모두 덮어쓴 것을 확인 할 수 있습니다.&lt;/p&gt;
+&lt;p&gt;style.fontWeight=’bold’를 지정하였지만
+element.style.cssText 구문이
+앞에서 지정한 ‘fontWeight’ 속성을 모두 덮어쓴 것을 확인 할 수 있습니다.&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; element.style.cssText  = &apos;color: blue; background-color: yellow&apos;;
 
