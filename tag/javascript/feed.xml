@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://winmathup.github.io/tag/javascript/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://winmathup.github.io/" rel="alternate" type="text/html" />
-  <updated>2022-11-06T13:47:15+09:00</updated>
+  <updated>2022-11-06T14:02:26+09:00</updated>
   <id>https://winmathup.github.io/tag/javascript/feed.xml</id>
 
   
@@ -30,6 +30,126 @@
   
   
 
+  
+    <entry>
+      <title type="html">javascript Study</title>
+      <link href="https://winmathup.github.io/javascript-3" rel="alternate" type="text/html" title="javascript Study" />
+      <published>2022-11-05T20:00:00+09:00</published>
+      <updated>2022-11-05T20:00:00+09:00</updated>
+      <id>https://winmathup.github.io/javascript-3</id>
+      <content type="html" xml:base="https://winmathup.github.io/javascript-3">&lt;p&gt;Chapter 39._DOM&lt;/p&gt;
+
+&lt;h6 id=&quot;html-문서의-모든-요소-노드를-취득하려면-getelementsbytagname-메서드의-인수로--를-전달한다&quot;&gt;Html 문서의 모든 요소 노드를 취득하려면 getElementsByTagName 메서드의 인수로 ‘*’ 를 전달한다.&lt;/h6&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getElementsByTagName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;*&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;3923-class를-이용한-요소-노드-취득&quot;&gt;39.2.3 class를 이용한 요소 노드 취득&lt;/h3&gt;
+
+&lt;h6 id=&quot;elementprototypegetelementsbyclassname-메서드&quot;&gt;&lt;mark&gt;Element.prototype.getElementsByClassName 메서드&lt;/mark&gt;&lt;/h6&gt;
+
+&lt;p&gt;class값은 공백으로 구분하여 여러 개의 class를 지정할 수 있다.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[...&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;elems&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;elem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;elem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;red&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  element.style.backgroundColor = &apos;yellow&apos;;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  element.style.cssText  = &apos;color: blue; background-color: yellow&apos;;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[...&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;elems&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;elem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;elem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cssText&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&apos;color:blue;background-color:yellow&apos;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;style 속성과 style.cssText 속성을 사용하여 style을 지정할 때 주의해야 할 것이 있습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;u&gt;&lt;b&gt;style.css속성명&lt;/b&gt;&lt;/u&gt; -  기존에 정의된 style에 새로운 속성을 추가합니다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;u&gt;style.cssText&lt;/u&gt;&lt;/strong&gt; - 기존에 정의된 style을 지우고, cssText로 덮어 씁니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;style.fontWeight=’bold’를 지정하였지만&lt;/p&gt;
+
+&lt;p&gt;element.style.cssText 구문이&lt;/p&gt;
+
+&lt;p&gt;앞에서 지정한 ‘fontWeight’ 속성을 모두 덮어쓴 것을 확인 할 수 있습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; element.style.cssText  = &apos;color: blue; background-color: yellow&apos;;
+
+  // 3. Style 속성 지정(추가된다)
+  element.style.fontWeight=&apos;bold&apos;;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Window.getComputedStyle() 메소드는 &lt;br /&gt;
+파라미터로 전달받은 요소의 모든 CSS 속성값을 담은 객체를 리턴합니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  const bgColor = getComputedStyle(element).backgroundColor;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;3924-css선택자를-이용한-요소-노드-취득&quot;&gt;39.2.4 CSS선택자를 이용한 요소 노드 취득&lt;/h3&gt;
+
+&lt;p&gt;CSS선택자는 스타일을 적용하고자 하는 HTML 요소를 특정할 때 사용하는 문법이다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;p { … } : p 태그 요소 모두 선택&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;#foo { … } : id ‘foo’ 요소 모두 선택&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;.foo { … } : class ‘foo’ 요소 모두 선택&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;input[type=text] { … } : input 요소 중에 type 어트리뷰트 값이 text인 요소 모두 선택&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;div p { … } : div 요소의 후손 요소 중 p 요소를 모두 선택&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;div &amp;gt; p { … } : div 요소의 자식 요소 중 p 요소를 모두 선택&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;p + ul { … } : p 요소의 형제 요소 중에 p 요소 바로 뒤에 위치하는 ul 요소를 선택&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;p ~ ul { … } : p 요소의 형제 요소 중에 p 요소 뒤에 위치하는 ul 요소를 모두 선택&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;a:hover { … } : hover 상태인 a 요소를 모두 선택&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;p::before { … } : p 요소의 콘텐츠의 앞에 위치하는 공간을 선택 일반적으로 content 프로퍼티와 함께 사용된다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>winmathup</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="javascript" />
+      
+
+      
+        <summary type="html">Chapter 39._DOM</summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">javascript Study</title>
