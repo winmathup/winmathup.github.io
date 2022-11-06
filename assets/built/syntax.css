@@ -176,7 +176,9 @@ svg:not(:root) {
 }
 
 mark {
-    background-color: #fdffb6
+    background-color: #b0d9ff;
+    padding: 5px;
+
 }
 
 code,

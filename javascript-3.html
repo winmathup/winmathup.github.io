@@ -223,8 +223,8 @@ into the {body} of the default.hbs template -->
 <p>style 속성과 style.cssText 속성을 사용하여 style을 지정할 때 주의해야 할 것이 있습니다.</p>
 
 <ul>
-  <li><u><b>style.css속성명</b></u> -  기존에 정의된 style에 새로운 속성을 추가합니다.</li>
-  <li><strong><u>style.cssText</u></strong> - 기존에 정의된 style을 지우고, cssText로 덮어 씁니다.</li>
+  <li><mark><b>style.css속성명 - 기존에 정의된 style에 새로운 속성을 추가합니다.</b></mark></li>
+  <li><mark><b>style.cssText - 기존에 정의된 style을 지우고, cssText로 덮어 씁니다.</b></mark></li>
 </ul>
 
 <p>style.fontWeight=’bold’를 지정하였지만
@@ -281,7 +281,143 @@ element.style.cssText 구문이
   </li>
 </ul>
 
-<h6 id="queryselector-queryselectorall-메서드는-getelementbyid-getelementsby-메서드보다-다소-느리다">querySelector, querySelectorAll 메서드는 getElementById, getElementsBy*** 메서드보다 다소 느리다.</h6>
+<blockquote>
+  <p>querySelector, querySelectorAll 메서드는 getElementById, getElementsBy*** 메서드보다 다소 느리다.  하지만 CSS 선택자 문법을 사용하여 좀 더 구체적인 조건으로 요소 노드를 취득할 수 있고 일관된 방식으로 요소 노드를 취득할 수 있다는 장점이 있다.따라서 id 어트리뷰트가 있는 요소 노드를 취득하는 경우에는 getElementById 메서드를 사용하고 그 외의 경우에는 querySelector, querySelectorAll 메서드를 사용하는 것을 권장한다.</p>
+</blockquote>
+
+<h3 id="3926-htmlcollection-과-nodelist">39.2.6 HTMLCollection 과 NodeList</h3>
+
+<p>1 . HTMLCollection</p>
+
+<blockquote>
+  <p>HtmlCollection은 항상 live 객체로 동작한다. NodeList는 대부분의 경우 노드 객체의 상태변화를 실시간으로 반영하지 않고 과거의 정적 상태를 유지하는 non-live 객체로 동작하지만 경우에 따라 live 객체로 동작할 때가 있다.</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="err">!</span><span class="n">DOCTYPE</span> <span class="n">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">hdad</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">style</span><span class="o">&gt;</span>
+        <span class="p">.</span><span class="n">red</span> <span class="p">{</span>
+            <span class="n">color</span><span class="p">:</span> <span class="n">red</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="p">.</span><span class="n">blue</span> <span class="p">{</span>
+            <span class="n">color</span><span class="p">:</span> <span class="n">blue</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="o">&lt;/</span><span class="n">style</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">hdad</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">html</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">ul</span> <span class="nb">id</span><span class="o">=</span><span class="s">"fruits"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">li</span> <span class="n">class</span><span class="o">=</span><span class="s">"red"</span><span class="o">&gt;</span><span class="n">Apple</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">li</span> <span class="n">class</span><span class="o">=</span><span class="s">"red"</span><span class="o">&gt;</span><span class="n">Banana</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">li</span> <span class="n">class</span><span class="o">=</span><span class="s">"red"</span><span class="o">&gt;</span><span class="n">Orange</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>
+        <span class="n">const</span> <span class="err">$</span><span class="n">elems</span> <span class="o">=</span> <span class="n">document</span><span class="p">.</span><span class="n">getElementsByClassName</span><span class="p">(</span><span class="s">'red'</span><span class="p">);</span>
+        <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="err">$</span><span class="n">elems</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">let</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="err">$</span><span class="n">elems</span><span class="p">.</span><span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="err">$</span><span class="n">elems</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">className</span> <span class="o">=</span> <span class="s">'blue'</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="err">$</span><span class="n">elems</span><span class="p">);</span>
+    <span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+
+<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+
+<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>i=0일 때 : elems[0] red에서 blue로 바뀌고 제거됨
+i=1일 때 : length3에서 length2로 바뀜, elems[1]은 제거되기전 elems[2]와 같음, 위와 같이 바뀌고 제거됨
+i=2일 때 : length2에서 length1로 바뀌며 elems는 elems[0]만(초기 elems[1]값) elems[2]를 가리키므로 false로 종료됨. 오류 방지하기 위해 for문을 역방향으로 하는 방법이 있다.</p>
+</blockquote>
+
+<p>2 . NodeList</p>
+
+<blockquote>
+  <p>HtmlCollection 객체의 부작용을 해결하기 위해 getElementsByTagName, getElementsByClassName 메서드 대신 querySelectorAll 메서드를 사용하는 방법도 있다. 단 실시간으로 객체의 상태 변경을 하지 않는다.하지만 childNodes 프로퍼티가 반환하는 NodeList 객체는 HTMLCollection 객체와 같이 실시간으로 노드 객체의 상태변경을 반영하는 live 객체로 동작한다.</p>
+</blockquote>
+
+<h3 id="3931-공백-텍스트-노드">39.3.1 공백 텍스트 노드</h3>
+
+<p>HTML 요소 사이의 스페이스, 탭, 줄바꿈(개행) 등의 공백 문자는 텍스트 노드를 생성한다.</p>
+
+<h3 id="3932-자식-노드-탐색">39.3.2 자식 노드 탐색</h3>
+
+<p>노드 탐색 프로퍼티 사용</p>
+
+<ol>
+  <li>
+    <p>Node.prototype.childNodes : 자식노드를 모두 탐색하여 DOM 객체인 NodeList에 담아 반환한다. childNodes 프로퍼티가 반환한 NodeList에는 요소 노드뿐만 아니라 텍스트 노드도 포함되어 있을 수 있다.</p>
+  </li>
+  <li>
+    <p>Element.prototype.children : HTMLCollection에 담아 반환한다. children 프로퍼티가 반환한 HTMLCollection에는 텍스트 노드가 포함되지 않는다.</p>
+  </li>
+  <li>
+    <p>Node.prototype.firstChild : 첫번째 자식 노드를 반환한다.</p>
+  </li>
+  <li>
+    <p>Node.prototype.lastChilde : 마지막 자식 노드를 반환한다.</p>
+  </li>
+  <li>
+    <p>Element.prototype.firstElementChild : 첫번째 자식 요소 노드를 반환한다.</p>
+  </li>
+  <li>
+    <p>Element.prototype.lastElementChild : 마지막 자식 요소 노드를 반환한다.</p>
+  </li>
+</ol>
+
+<h3 id="3933-자식-노드-존재-확인">39.3.3 자식 노드 존재 확인</h3>
+
+<p>Node.prototype.hasChildNodes 메서드 사용한다. 자식 노드가 존재하면 true, 존재하지 않으면 false</p>
+
+<p>자식 노드 중에 텍스트 노드가 아닌 요소 노드가 존재하는지 확인하려면 hasChildNodes 메서드 대신 children.length 또는 Element 인터페이스의 childElementCount 프로퍼티를 사용한다.</p>
+
+<h3 id="3935-부모-노트-탐색">39.3.5 부모 노트 탐색</h3>
+
+<p>부모 노트 탐색하려면 Node.prototype.parentNode 사용. 
+텍스트 노드는 DOM 트리의 최종단 노드인 리프 노드이므로 부모노드가 텍스트 노드인 경우는 없다.</p>
+
+<h3 id="394-노드-정보-취득">39.4 노드 정보 취득</h3>
+
+<ol>
+  <li>
+    <p>Node.prototype.nodeType</p>
+
+    <ul>
+      <li>
+        <p>Node.ELEMENT_NODE(1반환)</p>
+      </li>
+      <li>
+        <p>Node.TEXT_NODE(3반환)</p>
+      </li>
+      <li>
+        <p>Node.DOCUMENT_NODE(9반환)</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Node.prototype.nodeName</p>
+
+    <ul>
+      <li>
+        <p>요소 노드 : UL, LI 반환</p>
+      </li>
+      <li>
+        <p>텍스트 노드 : #text 반환</p>
+      </li>
+      <li>
+        <p>문서 노드 : #document 반환</p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="3951-nodevalue">39.5.1 nodeValue</h3>
+
+<p>Node.prototype.nodeValue 프로퍼티는 setter와 getter 모두 존재하는 접근자 프로퍼티다. 참조와 할당 모두 가능하다. 노드 객체의 값을 반환하는데 노드 객체의 값이란 텍스트 노드의 텍스트다. 따라서 텍스트 노드가 아닌 노드인 문서노드나 요소노드의 nodeValue 프로퍼티를 참조하면 null을 반환한다.</p>
 
                 </div>
             </section>
