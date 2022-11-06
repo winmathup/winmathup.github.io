@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://winmathup.github.io/tag/javascript/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://winmathup.github.io/" rel="alternate" type="text/html" />
-  <updated>2022-11-06T16:59:01+09:00</updated>
+  <updated>2022-11-06T17:12:13+09:00</updated>
   <id>https://winmathup.github.io/tag/javascript/feed.xml</id>
 
   
@@ -121,7 +121,9 @@ element.style.cssText 구문이
   &lt;li&gt;
     &lt;p&gt;p::before { … } : p 요소의 콘텐츠의 앞에 위치하는 공간을 선택 일반적으로 content 프로퍼티와 함께 사용된다.&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content>
+&lt;/ul&gt;
+
+&lt;h6 id=&quot;queryselector-queryselectorall-메서드는-getelementbyid-getelementsby-메서드보다-다소-느리다&quot;&gt;querySelector, querySelectorAll 메서드는 getElementById, getElementsBy*** 메서드보다 다소 느리다.&lt;/h6&gt;</content>
 
       
       
