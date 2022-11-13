@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>javascript Study</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/custom.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>
+        .hljs {
+            background: none;
+        }
+    </style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="WINNERS MATHEMATICS" />
+    <link rel="shortcut icon" href="https://winmathup.github.io/assets/built/images/winlogo.png" type="image/png" />
+    <link rel="canonical" href="https://winmathup.github.io/javascript-4" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="WINNERS" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="javascript Study" />
+    <meta property="og:description" content="Chapter 39.DOM 조작 새로운 노드가 추가되거나 삭제되면 리플로우와 리페인트가 발생하는 원인이 되므로 성능에 영향을 준다. DOM 조작은 성능 최적화를 위해 주의해서 다루어야 한다. 39.6.1 innerHTML Element.prototype.innerHTML 프로퍼티는 setter와 getter 모두 존재하는 접근자 프로퍼티로서 요소 노드의 HTML 마크업을 취득하거나 변경한다. 모든 HTML 마크업을 문자열로 반환한다. innerHTML 프로퍼티를 사용한 DOM 조작은 구현이" />
+    <meta property="og:url" content="https://winmathup.github.io/javascript-4" />
+    <meta property="og:image" content="https://winmathup.github.io/assets/built/images/javascript.png" />
+    <meta property="article:publisher" content="https://www.facebook.com/ghost" />
+    <meta property="article:author" content="https://www.facebook.com/ghost" />
+    <meta property="article:published_time" content="2022-11-11T20:00:00+09:00" />
+    <meta property="article:modified_time" content="2022-11-11T20:00:00+09:00" />
+    <meta property="article:tag" content="Javascript" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="javascript Study" />
+    <meta name="twitter:description" content="Chapter 39.DOM 조작 새로운 노드가 추가되거나 삭제되면 리플로우와 리페인트가 발생하는 원인이 되므로 성능에 영향을 준다. DOM 조작은 성능 최적화를 위해 주의해서 다루어야 한다. 39.6.1 innerHTML Element.prototype.innerHTML 프로퍼티는 setter와 getter 모두 존재하는 접근자 프로퍼티로서 요소 노드의 HTML 마크업을 취득하거나 변경한다. 모든 HTML 마크업을 문자열로 반환한다. innerHTML 프로퍼티를 사용한 DOM 조작은 구현이" />
+    <meta name="twitter:url" content="https://winmathup.github.io/" />
+    <meta name="twitter:image" content="https://winmathup.github.io/assets/built/images/javascript.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="WINNERS" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Javascript" />
+    <meta name="twitter:site" content="@tryghost" />
+    <meta name="twitter:creator" content="@tryghost" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "WINNERS",
+        "logo": "https://winmathup.github.io/assets/built/images/winlogo.png"
+    },
+    "url": "https://winmathup.github.io/javascript-4",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://winmathup.github.io/assets/built/images/javascript.png",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://winmathup.github.io/javascript-4"
+    },
+    "description": "Chapter 39.DOM 조작 새로운 노드가 추가되거나 삭제되면 리플로우와 리페인트가 발생하는 원인이 되므로 성능에 영향을 준다. DOM 조작은 성능 최적화를 위해 주의해서 다루어야 한다. 39.6.1 innerHTML Element.prototype.innerHTML 프로퍼티는 setter와 getter 모두 존재하는 접근자 프로퍼티로서 요소 노드의 HTML 마크업을 취득하거나 변경한다. 모든 HTML 마크업을 문자열로 반환한다. innerHTML 프로퍼티를 사용한 DOM 조작은 구현이"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="javascript Study" href="/feed.xml" />
+
+
+</head>
+
+<body
+    class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://winmathup.github.io/"><img src="/assets/built/images/winlogo.png" alt="WINNERS" /></a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
+    <li class="nav-javascript" role="menuitem"><a href="/tag/javascript">javascript</a></li>
+    <li class="nav-react" role="menuitem"><a href="/tag/react/">react</a></li>
+    <li class="nav-mathematics" role="menuitem"><a href="/tag/mathematics/">mathematics</a></li> 
+    <li class="nav-winners" role="menuitem"><a href="/tag/winners/">winners</a></li>
+    <li class="nav-basic" role="menuitem"><a href="/tag/basic/">초등</a></li>
+    <li class="nav-middle" role="menuitem"><a href="/tag/middle/">중등</a></li>
+    <li class="nav-high" role="menuitem"><a href="/tag/high/">고등</a></li> 
+</ul>
+
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+                <a class="social-link social-link-fb" href="https://facebook.com/ghost" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+</a>
+            
+            
+                <a class="social-link social-link-tw" href="https://twitter.com/tryghost" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+</a>
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Subscribe</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-javascript post tag-javascript ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="11 November 2022">11 November 2022</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/javascript/'>JAVASCRIPT</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">javascript Study</h1>
+            </header>
+<!--
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/javascript.png)">
+            </figure>
+            
+-->
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    <p>Chapter 39.DOM 조작</p>
+
+<h6 id="새로운-노드가-추가되거나-삭제되면-리플로우와-리페인트가-발생하는-원인이-되므로-성능에-영향을-준다-dom-조작은-성능-최적화를-위해-주의해서-다루어야-한다">새로운 노드가 추가되거나 삭제되면 리플로우와 리페인트가 발생하는 원인이 되므로 성능에 영향을 준다. DOM 조작은 성능 최적화를 위해 주의해서 다루어야 한다.</h6>
+
+<h3 id="3961-innerhtml">39.6.1 innerHTML</h3>
+
+<p>Element.prototype.innerHTML 프로퍼티는 setter와 getter 모두 존재하는 접근자 프로퍼티로서 요소 노드의 HTML 마크업을 취득하거나 변경한다. 모든 HTML 마크업을 문자열로 반환한다.</p>
+
+<p>innerHTML 프로퍼티를 사용한 DOM 조작은 구현이 간단하고 직관적이라는 장점이 있지만 크로스 사이트 스크립팅 공격에 취약한 단점이 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">DOMPurify</span><span class="p">.</span><span class="n">sanitize</span><span class="p">(</span><span class="s">'&lt;img src="x" onerror="alert(document.cookie)"&gt;`);
+</span></code></pre></div></div>
+
+<h6 id="단점">단점</h6>
+
+<ol>
+  <li>크로스 사이트 스크립팅 공격에 취약</li>
+  <li>요소노드의 모든 자식노드를 제거하고 할당한 HTML 마크업 문자열을 파싱하여 변경한다.</li>
+  <li>새로운 요소를 삽입할 때 삽일될 위치를 지정할 수 없다.</li>
+</ol>
+
+<h3 id="3962-insertadjacenthtml">39.6.2 insertAdjacentHTML</h3>
+
+<p>Element.prototype.insertAdjacentHTML(position,DOMString) 메서드는 기존 요소를 제거하지 않으면서 위치를 지정해 새로운 요소를 삽입한다.</p>
+
+<p>첫번째 인수로 전달할 수 있는 문자열은 ‘<mark>beforebegin</mark>’, ‘<mark>afterbegin</mark>’, ‘<mark>beforeend</mark>’, ‘<mark>afterend</mark>’</p>
+
+<p>innerHTML과 마찬가지로 크로스 사이트 스크립팅 공격에 취약하나 보다 빠르고 효율적이다.</p>
+
+<h3 id="3963-노드-생성과-추가">39.6.3 노드 생성과 추가</h3>
+
+<p>DOM은 노드를 직접 생성/삽입/삭제/치환하는 메서드도 제공한다.</p>
+
+<p>노드 생성과 추가</p>
+
+<ol>
+  <li>
+    <p>텍스트 노드 생성 : createTextNode(‘   ‘) / 텍스트 노드는 요소 노드의 자식노드로 추가되지 않고 홀로 존재하는 상태이다.</p>
+  </li>
+  <li>
+    <p>텍스트 노트를 요소노드의 자식노드로 추가 : Node.prototype.appendChild(childNode) 메서드는 매개변수 childNode에게 인수로 전달한 노드를 appendChild 메서드를 호출한 노드의 마지막 자식 노드로 추가한다.</p>
+  </li>
+</ol>
+
+<h3 id="3964-복수의-노드-생성과-추가">39.6.4 복수의 노드 생성과 추가</h3>
+
+<p>DOM을 여러번 변경하는 것은 높은 비용이 드는 처리이므로 가급적 횟수를 줄이는 편이 성능에 유리하다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="err">!</span><span class="n">DOCTYPE</span> <span class="n">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">html</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">ul</span> <span class="nb">id</span><span class="o">=</span><span class="s">"fruits"</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>
+    <span class="n">const</span> <span class="err">$</span><span class="n">fruits</span> <span class="o">=</span> <span class="n">document</span><span class="p">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s">'fruits'</span><span class="p">);</span>
+    <span class="p">[</span><span class="s">'Apple'</span><span class="p">,</span> <span class="s">'Banana'</span><span class="p">,</span> <span class="s">'Orange'</span><span class="p">].</span><span class="n">forEach</span><span class="p">(</span><span class="n">text</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="n">const</span> <span class="err">$</span><span class="n">li</span> <span class="o">=</span> <span class="n">document</span><span class="p">.</span><span class="n">createElement</span><span class="p">(</span><span class="s">'li'</span><span class="p">);</span>
+        <span class="n">const</span> <span class="n">textNode</span> <span class="o">=</span> <span class="n">document</span><span class="p">.</span><span class="n">createTextNode</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+        <span class="err">$</span><span class="n">li</span><span class="p">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">textNode</span><span class="p">);</span>
+        <span class="err">$</span><span class="n">fruits</span><span class="p">.</span><span class="n">appendChild</span><span class="p">(</span><span class="err">$</span><span class="n">li</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+
+<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>변경 문제를 회피하기 위해 컨테이너 요소를 사용한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="err">!</span><span class="n">DOCTYPE</span> <span class="n">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">html</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">ul</span> <span class="nb">id</span><span class="o">=</span><span class="s">"fruits"</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>
+    <span class="n">const</span> <span class="err">$</span><span class="n">fruits</span> <span class="o">=</span> <span class="n">document</span><span class="p">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s">'fruits'</span><span class="p">);</span>
+    <span class="n">const</span> <span class="err">$</span><span class="n">container</span> <span class="o">=</span> <span class="n">document</span><span class="p">.</span><span class="n">createElement</span><span class="p">(</span><span class="s">'div'</span><span class="p">);</span>
+
+    <span class="p">[</span><span class="s">'Apple'</span><span class="p">,</span> <span class="s">'Banana'</span><span class="p">,</span> <span class="s">'Orange'</span><span class="p">].</span><span class="n">forEach</span><span class="p">(</span><span class="n">text</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="n">const</span> <span class="err">$</span><span class="n">li</span> <span class="o">=</span> <span class="n">document</span><span class="p">.</span><span class="n">createElement</span><span class="p">(</span><span class="s">'li'</span><span class="p">);</span>
+        <span class="n">const</span> <span class="n">textNode</span> <span class="o">=</span> <span class="n">document</span><span class="p">.</span><span class="n">createTextNode</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+        <span class="err">$</span><span class="n">li</span><span class="p">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">textNode</span><span class="p">);</span>
+        <span class="err">$</span><span class="n">container</span><span class="p">.</span><span class="n">appendChild</span><span class="p">(</span><span class="err">$</span><span class="n">li</span><span class="p">);</span>
+    <span class="p">});</span>
+    <span class="err">$</span><span class="n">fruits</span><span class="p">.</span><span class="n">appendChild</span><span class="p">(</span><span class="err">$</span><span class="n">container</span><span class="p">);</span>
+<span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+
+<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>부작용 : 불필요한 요소가 DOM에 추가되는 부작용이 있다.</p>
+
+<p>DocumentFragment 노드를 통해 해결할 수 있다. DocumentFragment 노드는 문서, 요소, 어트리뷰터, 텍스트 노드와 같은 노드 객체의 일종으로 부모 노드가 없어서 기존 DOM과는 별도로 존재한다.</p>
+
+<h3 id="3965-노드-삽입">39.6.5 노드 삽입</h3>
+
+<p>마지막 노드로 추가</p>
+
+<p>Node.prototype.appendChild 메서드는 인수로 전달받은 노드를 자신을 호출한 노드의 마지막 자식 노드로 DOM에 추가한다. 이때 노드를 추가할 위치를 지정할 수 없고 언제나 마지막 자식 노드로 추가한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="err">!</span><span class="n">DOCTYPE</span> <span class="n">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">html</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">ul</span> <span class="nb">id</span><span class="o">=</span><span class="s">"fruits"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">Apple</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">Banana</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>
+    <span class="n">const</span> <span class="err">$</span><span class="n">li</span> <span class="o">=</span> <span class="n">document</span><span class="p">.</span><span class="n">createElement</span><span class="p">(</span><span class="s">'li'</span><span class="p">);</span>
+    <span class="err">$</span><span class="n">li</span><span class="p">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">document</span><span class="p">.</span><span class="n">createTextNode</span><span class="p">(</span><span class="s">'Orange'</span><span class="p">));</span>
+    <span class="n">document</span><span class="p">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s">'fruits'</span><span class="p">).</span><span class="n">appendChild</span><span class="p">(</span><span class="err">$</span><span class="n">li</span><span class="p">);</span>
+<span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+
+<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>지정한 위치에 노드 삽입</p>
+
+<p>Node.prototype.insertBefore(newNode,childNode) 메서드는 첫 번째 인수로 전달받은 노드를 두 번째 인수로 전달받은 노드 앞에 삽입한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="err">!</span><span class="n">DOCTYPE</span> <span class="n">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">ul</span> <span class="nb">id</span><span class="o">=</span><span class="s">"fruits"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">Apple</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">banana</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>
+    <span class="n">const</span> <span class="err">$</span><span class="n">fruits</span> <span class="o">=</span> <span class="n">document</span><span class="p">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s">'fruits'</span><span class="p">);</span>
+    <span class="n">const</span> <span class="err">$</span><span class="n">li</span> <span class="o">=</span> <span class="n">document</span><span class="p">.</span><span class="n">createElement</span><span class="p">(</span><span class="s">'li'</span><span class="p">);</span>
+    <span class="err">$</span><span class="n">li</span><span class="p">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">document</span><span class="p">.</span><span class="n">createTextNode</span><span class="p">(</span><span class="s">'Orange'</span><span class="p">));</span>
+    <span class="err">$</span><span class="n">fruits</span><span class="p">.</span><span class="n">insertBefore</span><span class="p">(</span><span class="err">$</span><span class="n">li</span><span class="p">,</span> <span class="err">$</span><span class="n">fruits</span><span class="p">.</span><span class="n">lastElementChild</span><span class="p">);</span>
+<span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>두 번째 인수로 전달받은 노드가 null이면 첫 번째 인수로 전달받은 노드를 insertBefore 메서드를 호출한 노드의 마지막 자식 노드로 추가된다.</p>
+
+<h3 id="3966-노드-이동">39.6.6 노드 이동</h3>
+
+<p>DOM에 이미 존재하는 노드를 appleChild 또는 insertBefore 메서드를 사용하여 DOM에 다시 추가하면 현재 위치에서 노드를 제거하고 새로운 위치에 노드를 추가한다. 즉, 노드가 이동한다.</p>
+
+<h3 id="3967-노드-복사">39.6.7 노드 복사</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Node.prototype.cloneNode([deep:true</td>
+      <td>false])</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>메서드는 노드의 사본을 생성하여 반환한다. 매개변수 deep에 true를 인수로 전달하면 노드를 깊은 복사하여 모든 자손 노드가 포함된 사본을 생성하고, false를 인수로 전달하거나 생략하면 노드를 얖은 복사하여 노드 자신만의 사본을 생성한다. 얕은 복사로 생성된 요소 노드는 자손 노드를 복사하지 않으므로 텍스트 노드도 없다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="err">!</span><span class="n">DOCTYPE</span> <span class="n">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">html</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">ul</span> <span class="nb">id</span><span class="o">=</span><span class="s">"fruits"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">Apple</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>
+    <span class="n">const</span> <span class="err">$</span><span class="n">fruits</span> <span class="o">=</span> <span class="n">document</span><span class="p">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s">'fruits'</span><span class="p">);</span>
+    <span class="n">const</span> <span class="err">$</span><span class="n">apple</span> <span class="o">=</span> <span class="err">$</span><span class="n">fruits</span><span class="p">.</span><span class="n">firstElementChild</span><span class="p">;</span>
+    <span class="n">const</span> <span class="err">$</span><span class="n">shallowClone</span> <span class="o">=</span> <span class="err">$</span><span class="n">apple</span><span class="p">.</span><span class="n">cloneNode</span><span class="p">();</span>
+    <span class="err">$</span><span class="n">shallowClone</span><span class="p">.</span><span class="n">textContent</span> <span class="o">=</span> <span class="s">'Banana'</span><span class="p">;</span>
+    <span class="err">$</span><span class="n">fruits</span><span class="p">.</span><span class="n">appendChild</span><span class="p">(</span><span class="err">$</span><span class="n">shallowClone</span><span class="p">);</span>
+    <span class="n">const</span> <span class="err">$</span><span class="n">deepClone</span> <span class="o">=</span> <span class="err">$</span><span class="n">fruits</span><span class="p">.</span><span class="n">cloneNode</span><span class="p">(</span><span class="n">true</span><span class="p">);</span>
+    <span class="err">$</span><span class="n">fruits</span><span class="p">.</span><span class="n">appendChild</span><span class="p">(</span><span class="err">$</span><span class="n">deepClone</span><span class="p">);</span>
+<span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+
+<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<h3 id="3968-노드-교체">39.6.8 노드 교체</h3>
+
+<p>Node.prototype.replaceChild(newChild,oldChild) 메서드는 자신을 호출한 노드의 자식 노드를 다른 노드로 교체한다.</p>
+
+<p>첫 번째 매개변수 newChild에는 교체할 새로운 노드를 인수로 전달하고, 두 번째 매개변수 oldChild에는 이미 존재하는 교체될 노드를 인수로 전달한다. oldChild 매개변수에 인수로 전달한 노드는 replaceChild 메서드를 호출한 노드의 자식 노드이어야 한다.</p>
+
+<p>replaceChild메서드는 자신을 호출한 노드의 자식 노드인 oldChild 노드를 newChild 노드로 교체한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="err">!</span><span class="n">DOCTYPE</span> <span class="n">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">html</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">ul</span> <span class="nb">id</span><span class="o">=</span><span class="s">"fruits"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">Apple</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>
+    <span class="n">const</span> <span class="err">$</span><span class="n">fruits</span> <span class="o">=</span> <span class="n">document</span><span class="p">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s">'fruits'</span><span class="p">);</span>
+    <span class="n">const</span> <span class="err">$</span><span class="n">newChild</span> <span class="o">=</span> <span class="n">document</span><span class="p">.</span><span class="n">createElement</span><span class="p">(</span><span class="s">'li'</span><span class="p">);</span>
+    <span class="err">$</span><span class="n">newChild</span><span class="p">.</span><span class="n">textContent</span> <span class="o">=</span> <span class="s">'Banana'</span><span class="p">;</span>
+    <span class="err">$</span><span class="n">fruits</span><span class="p">.</span><span class="n">replaceChild</span><span class="p">(</span><span class="err">$</span><span class="n">newChild</span><span class="p">,</span> <span class="err">$</span><span class="n">fruits</span><span class="p">.</span><span class="n">firstElementChild</span><span class="p">);</span>
+<span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+
+<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<h3 id="3969-노드-삭제">39.6.9 노드 삭제</h3>
+
+<p>Node.prototype.removeChild(child) 메서드는 매개변수에 인수로 전달한 노드를 DOM에서 삭제한다. 인수로 전달한 노드는 removeChild 메서드를 호출한 노드의 자식 노드이어야 한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="err">!</span><span class="n">DOCTYPE</span> <span class="n">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">html</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">ul</span> <span class="nb">id</span><span class="o">=</span><span class="s">"fruits"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">Apple</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">Banana</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>
+    <span class="n">const</span> <span class="err">$</span><span class="n">fruits</span> <span class="o">=</span> <span class="n">document</span><span class="p">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s">'fruits'</span><span class="p">);</span>
+    <span class="err">$</span><span class="n">fruits</span><span class="p">.</span><span class="n">removeChild</span><span class="p">(</span><span class="err">$</span><span class="n">fruits</span><span class="p">.</span><span class="n">lastElementChild</span><span class="p">);</span>
+<span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+
+<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<h2 id="397-어트리뷰트">39.7 어트리뷰트</h2>
+
+<p>어트리뷰트 이름 = “어트리뷰트 값” 형식</p>
+
+<p>HTML 문서가 파싱될 때 HTML 요소의 어트리뷰터는 어트리뷰트 노드로 변환되어 요소 노드와 연결된다. 이때 HTML 어트리뷰트랑 하나의 어트리뷰트 노드가 생성된다.</p>
+
+<p>요소노드의 모든 어트리뷰트 노드는 요소 노드의 Element.prototype.attributes 프로퍼티로 취득할 수 있다.</p>
+
+<p>attributes 프로퍼티는 getter만 존재하는 읽기 전용 접근자 프로퍼티이며, 요소 노드의 모든 어트리뷰트 노드의 참조가 담긴 NamedNodeMap 객체를 반환한다.</p>
+
+<h3 id="3972-html-어트리뷰트-조작">39.7.2 HTML 어트리뷰트 조작</h3>
+
+<p>요소노드의 attributes 프로퍼티는 값을 취득할 수는 있지만 변경할 수는 없다.</p>
+
+<p>Element.prototype.getAttribute/setAttribute 메서드를 사용하면 attributes 프로퍼티를 통하지 않고 요소 노드에서 메서드를 통해 값을 취득하거나 변경할 수 있다.</p>
+
+<p>특정 HTML 어트리뷰트가 존재하는지 확인하려면 Element.prototype.hasAttribute 사용</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="err">!</span><span class="n">DOCTYPE</span> <span class="n">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">html</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nb">input</span> <span class="nb">id</span><span class="o">=</span><span class="s">"user"</span> <span class="nb">type</span><span class="o">=</span><span class="s">"text"</span> <span class="n">value</span><span class="o">=</span><span class="s">"ungmo2"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>
+        <span class="n">const</span> <span class="err">$</span><span class="nb">input</span> <span class="o">=</span> <span class="n">document</span><span class="p">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s">'user'</span><span class="p">);</span>
+        <span class="n">const</span> <span class="n">inputValue</span> <span class="o">=</span> <span class="err">$</span><span class="nb">input</span><span class="p">.</span><span class="n">getAttribute</span><span class="p">(</span><span class="s">'value'</span><span class="p">);</span>
+        <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">inputValue</span><span class="p">);</span>
+        <span class="err">$</span><span class="nb">input</span><span class="p">.</span><span class="n">setAttribute</span><span class="p">(</span><span class="s">'value'</span><span class="p">,</span> <span class="s">'foo'</span><span class="p">);</span>
+        <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="err">$</span><span class="nb">input</span><span class="p">.</span><span class="n">getAttribute</span><span class="p">(</span><span class="s">'value'</span><span class="p">));</span>
+
+    <span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+
+<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>특정 HTML 어트리뷰트를 삭제하려면 Element.prototype.removeAttribute 사용</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="err">!</span><span class="n">DOCTYPE</span> <span class="n">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">html</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nb">input</span> <span class="nb">id</span><span class="o">=</span><span class="s">"user"</span> <span class="nb">type</span><span class="o">=</span><span class="s">"text"</span> <span class="n">value</span><span class="o">=</span><span class="s">"ungmo2"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>
+        <span class="n">const</span> <span class="err">$</span><span class="nb">input</span> <span class="o">=</span> <span class="n">document</span><span class="p">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s">'user'</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="err">$</span><span class="nb">input</span><span class="p">.</span><span class="n">hasAttribute</span><span class="p">(</span><span class="s">'value'</span><span class="p">))</span> <span class="p">{</span>
+            <span class="err">$</span><span class="nb">input</span><span class="p">.</span><span class="n">removeAttribute</span><span class="p">(</span><span class="s">'value'</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="err">$</span><span class="nb">input</span><span class="p">.</span><span class="n">hasAttribute</span><span class="p">(</span><span class="s">'value'</span><span class="p">));</span>
+    <span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+
+<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>HTML 어트리뷰트 역할은 HTML요소의 초기 상태를 지정하는 것이다. 이는 변하지 않는다.</p>
+
+<p><strong><mark>Attribute프로퍼티에 저장된 값과 요소노드의 프로퍼티에 저장된 값의 차이</mark></strong></p>
+
+<p><strong>요소노드는 상태를 가지고 있다.</strong></p>
+
+<blockquote>
+  <p>input 요소노드는 사용자가 입력필드에 입력한 값을 상태로 가지고 있으며, checkbox 요소노드는 사용자가 입력필드에 입력한 체크 여부를 상태로 가지고 있다. input 요소 노드나 checkbox 요소 노드가 가지고 있는 상태는 사용자의 입력에 의해 변화하는, 살아있는 것이다.</p>
+</blockquote>
+
+<p><strong>요소노드는 2개의 상태 : 초기상태와 최신 상태를 관리해야 한다.</strong></p>
+
+<ol>
+  <li>
+    <p>초기상태는 어트리뷰트 노드가 관리</p>
+  </li>
+  <li>
+    <p>최신상태는 DOM 프로퍼티가 관리</p>
+  </li>
+</ol>
+
+<p><strong>DOM 프로퍼티</strong></p>
+
+<p>DOM 프로퍼티는 사용자의 입력에 의한 상태변환에 반응하여 언제나 최신 상태를 유지한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="err">!</span><span class="n">DOCTYPE</span> <span class="n">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">html</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nb">input</span> <span class="nb">id</span><span class="o">=</span><span class="s">"user"</span> <span class="nb">type</span><span class="o">=</span><span class="s">"text"</span> <span class="n">value</span><span class="o">=</span><span class="s">"Mang-go"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>
+        <span class="n">const</span> <span class="err">$</span><span class="nb">input</span> <span class="o">=</span> <span class="n">document</span><span class="p">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s">'user'</span><span class="p">);</span>
+        <span class="err">$</span><span class="nb">input</span><span class="p">.</span><span class="n">oninput</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="s">'value 프로퍼티 값'</span><span class="p">,</span> <span class="err">$</span><span class="nb">input</span><span class="p">.</span><span class="n">value</span><span class="p">);</span>
+        <span class="p">};</span>
+        <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="s">'value 어트리뷰트 값'</span><span class="p">,</span> <span class="err">$</span><span class="nb">input</span><span class="p">.</span><span class="n">getAttribute</span><span class="p">(</span><span class="s">'value'</span><span class="p">));</span>
+    <span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+
+<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>But 모든 DOM 프로퍼티가 최신 상태를 관리하는 것은 아니다.</p>
+
+<p>input 요소의 상태변화는 value 프로퍼티가 관리, checkbox 요소의 상태변화는 checked 프로퍼티가 관리하지만 id 어트리뷰트에 대응하는 id 프로퍼티는 입력과 관계가 없다.</p>
+
+<p><strong>HTML 어트리뷰트와 DOM 프로퍼티의 대응관계</strong></p>
+
+<ol>
+  <li>
+    <p>id 어트리뷰트와 id 프로퍼티는 1:1 대응, 동일한 값으로 연동</p>
+  </li>
+  <li>
+    <p>input 요소의 value 어트리뷰트는 value 프로퍼티와 1:1 대응하지만 value 어트리뷰트는 초기상태, value 프로퍼티는 최신 상태</p>
+  </li>
+  <li>
+    <p>class 어트리뷰트는 className, classList 프로퍼티와 대응</p>
+  </li>
+  <li>
+    <p>for 어트리뷰트는 htmlFor 프로퍼티와 1:1 대응</p>
+  </li>
+  <li>
+    <p>td 요소의 colspan 어트리뷰트는 대응하는 프로퍼티가 존재하지 않는다.</p>
+  </li>
+  <li>
+    <p>textContent 프로퍼티는 대응하는 어트리뷰트가 존재하지 않는다.</p>
+  </li>
+</ol>
+
+<p><strong>DOM 프로퍼티 값의 타입</strong></p>
+
+<p>getAttribute 어트리뷰트값은 언제나 문자열이지만 DOM 프로퍼티로 취득한 최신 상태값은 문자열이 아닐 수도 있다. 예를 들어, checkbox 요소의 checked 어트리뷰트 값은 문자열이지만 프로퍼티 값은 불리언 타입이다.</p>
+
+<p><strong>data 어트리뷰트와 dataset 프로퍼티</strong></p>
+
+<p>data 어트리뷰트는 data-user-id, data-role, data-접두사 다음에 임의의 이름을 붙여 사용한다.</p>
+
+<p>data 어트리뷰트값은 HTMLElement.dataset 프로퍼티로 취득할 수 있다. dataset 프로퍼티는 DOMStringMap 객체를 반환한다.</p>
+
+
+                </div>
+            </section>
+
+            <!-- Email subscribe form at the bottom of the page
+            
+                <section class="subscribe-form">
+                    <h3 class="subscribe-form-title">Subscribe to WINNERS</h3>
+                    <p>Get the latest posts delivered right to your inbox</p>
+                    <form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+
+                </section>
+            
+ -->
+            <footer class="post-full-footer">
+                <!-- Everything inside the #author tags pulls data from the author -->
+                <!-- #author-->
+                
+                    
+                        <section class="author-card">
+                            
+                                <img class="author-profile-image" src="/assets/built/images/winlogo.png" alt="winmathup" />
+                            
+                            <section class="author-card-content">
+                                <h4 class="author-card-name"><a href="/author/winmathup">winmathup</a></h4>
+                                
+                                    <p>Winners Mathematics</p>
+                                
+                            </section>
+                        </section>
+                        <div class="post-full-footer-right">
+                            <a class="author-card-button" href="/author/winmathup">Read More</a>
+                        </div>
+                    
+                
+                <!-- /author  -->
+            </footer>
+
+            <!-- If you use Disqus comments, just uncomment this block.
+            The only thing you need to change is "test-apkdzgmqhj" - which
+            should be replaced with your own Disqus site-id. -->
+            
+
+        </article>
+
+    </div>
+</main>
+
+<!-- Links to Previous/Next posts -->
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+                
+                
+                
+                
+                    <article class="read-next-card"
+                        
+                            
+                                style="background-image: url(url(/assets/built/images/javascript.png)"
+                        
+                    >
+                        <header class="read-next-card-header">
+                            <small class="read-next-card-header-sitetitle">&mdash; WINNERS &mdash;</small>
+                            
+                                <h3 class="read-next-card-header-title"><a href="/tag/javascript/">Javascript</a></h3>
+                            
+                        </header>
+                        <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+</div>
+                        <div class="read-next-card-content">
+                            <ul>
+                                
+                                
+                                  
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                  
+                                
+                                  
+                                    
+                                  
+                                
+                                  
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                            </ul>
+                        </div>
+                        <footer class="read-next-card-footer">
+                            <a href="/tag/javascript/">
+                                
+                                    See all 3 posts  →
+                                
+                            </a>
+                        </footer>
+                    </article>
+                
+            
+
+            <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+            
+
+            <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/winners">
+                <div class="post-card-image" style="background-image: url(/assets/built/images/winners.png)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/winners">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Winners</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">winners Study</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p>11월 7일(월)
+
+</p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      1 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+        </div>
+    </div>
+</aside>
+
+<!-- Floating header which appears on-scroll, included from includes/floating-header.hbs -->
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="https://winmathup.github.io/">
+            
+                <img src="/assets/built/images/winmath.jpg" alt="WINNERS icon" />
+            
+            <span>WINNERS</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">javascript Study</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=javascript+Study&amp;url=https://winmathup.github.io/javascript-4"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://winmathup.github.io/javascript-4"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+
+        </a>
+    </div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://winmathup.github.io/">WINNERS</a> &copy; 2022</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
+                    <a href="https://github.com/jekyllt/jasper2" target="_blank" rel="noopener">Jasper2</a>
+                </section>
+                <nav class="site-footer-nav">
+                    <a href="/">Latest Posts</a>
+                    <a href="https://facebook.com/ghost" target="_blank"
+                        rel="noopener">Facebook</a>
+                    <a href="https://twitter.com/tryghost" target="_blank"
+                        rel="noopener">Twitter</a>
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email subscribe modal content -->
+    
+    <div id="subscribe" class="subscribe-overlay">
+        <a class="subscribe-overlay-close" href="#"></a>
+        <div class="subscribe-overlay-content">
+            
+            <img class="subscribe-overlay-logo" src="/assets/built/images/winlogo.png" alt="WINNERS" />
+            
+            <h1 class="subscribe-overlay-title">Subscribe to WINNERS</h1>
+            <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered
+                straight to your inbox</p>
+            <form method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  /><input class="location" type="hidden" name="location"  /><input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" type="email" name="email"  placeholder="youremail@example.com" />
+    </div>
+    <button class="" type="submit" disabled><span>Subscribe</span></button>
+    <script type="text/javascript">(function(g,h,o,s,t){h[o]('.location')[s]=h[o]('.location')[s] || g.location.href;h[o]('.referrer')[s]=h[o]('.referrer')[s] || h.referrer;})(window,document,'querySelector','value');</script>
+</form>
+
+        </div>
+    </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function () {
+            $('pre code').each(function (i, block) {
+                hljs.highlightBlock(block);
+            });
+        });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+        </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-69281367-1', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+    <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+
+</html>
